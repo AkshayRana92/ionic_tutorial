@@ -1,0 +1,22 @@
+page-home {
+  .scroll-content {
+    background-color: map-get($colors, primary) !important;
+
+    ion-list, ion-card, ion-card-header, ion-item {
+      background-color: map-get($colors, secondary);
+      color: map-get($colors, dark-font);
+    }
+
+    ion-card-header {
+      //background-color: map-get($colors, third);
+      //color: map-get($colors, light-font);
+      font-size: 2rem;
+      overflow: auto;
+      ion-icon {
+        cursor: pointer;
+        float: right;
+      }
+    }
+  }
+
+}

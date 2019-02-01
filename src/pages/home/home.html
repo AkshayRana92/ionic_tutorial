@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>TODO LIST</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <ion-card>
+    <ion-card-header>
+      Todo List
+      <ion-icon (click)="addNewTask()" name="md-add-circle" item-end></ion-icon>
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor="let task of filterTasksonCompletion(false)" >
+          <ion-icon name="arrow-dropright" item-start></ion-icon>
+          <ion-label>{{task.description}}</ion-label>
+          <ion-checkbox [(ngModel)]="task.isComplete"  item-end></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      Completed Tasks
+    </ion-card-header>
+
+    <ion-list>
+      <ion-item *ngFor="let task of filterTasksonCompletion(true)" >
+          <ion-icon name="arrow-dropright" item-start></ion-icon>
+          <ion-label>{{task.description}}</ion-label>
+          <ion-checkbox [(ngModel)]="task.isComplete"  item-end></ion-checkbox>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+
+</ion-content>
